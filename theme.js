@@ -1,7 +1,6 @@
 import {
   Dimensions,
   StyleSheet,
-  NavigationExperimental,
   Platform,
   StatusBar,
 } from 'react-native';
@@ -18,7 +17,7 @@ import {
 const window = Dimensions.get('window');
 
 const STATUS_BAR_OFFSET = (Platform.OS === 'android' ? -StatusBar.currentConfig : 0);
-const NAVIGATION_BAR_HEIGHT = NavigationExperimental.Header.HEIGHT;
+const NAVIGATION_BAR_HEIGHT = Platform.OS === 'android' ? 56 : 44,;
 
 export const sizeVariants = ['', 'left', 'right', 'top', 'bottom', 'horizontal', 'vertical'];
 export const textComponents = [
